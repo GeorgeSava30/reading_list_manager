@@ -1,5 +1,7 @@
 *.db
-data/settings.ini
+settings/settings.ini
 venv/
 
 __pycache__/
+*.pyc
+filestructure.txt
