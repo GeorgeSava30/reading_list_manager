@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from settings.settings import DATABASE_PATH
+from src.settings.settings import DATABASE_PATH
 
 class DatabaseManager:
     def __init__(self):
