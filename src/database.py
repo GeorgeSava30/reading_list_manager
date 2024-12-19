@@ -26,12 +26,13 @@ class DatabaseManager:
                     status TEXT NOT NULL
                 );
             """)
-            # Create users table
+            # Create tags table
             cursor.execute("""
-                CREATE TABLE IF NOT EXISTS users (
+                CREATE TABLE IF NOT EXISTS tags (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT NOT NULL,
-                    email TEXT NOT NULL UNIQUE
+                    book_id INTEGER NOT NULL,
+                    tag TEXT NOT NULL,
+                    FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE
                 );
             """)
             conn.commit()

@@ -1,4 +1,4 @@
-from database import DatabaseManager
+from src.database import DatabaseManager
 
 class Book:
     def __init__(self, title, author, year, status="unread"):

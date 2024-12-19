@@ -1,6 +1,6 @@
 from src.models.book import Book
 from src.database import DatabaseManager
-
+from src.managers.tag_manager import TagManager
 
 class BookManager:
     def init_db():
@@ -20,8 +20,9 @@ class BookManager:
         if books:
             formatted_books = []
             for book in books:
+                tags = TagManager.list_tags(book[0])
                 formatted_books.append(
-                    f"[ID {book[0]}] {book[1]} by {book[2]} ({book[3]}) - {book[4]}"
+                    f"[ID {book[0]}] {book[1]} by {book[2]} ({book[3]}) - {book[4]} | Tags: {tags}"
                 )
             return "\n".join(formatted_books)
         return "No books found."
@@ -35,3 +36,15 @@ class BookManager:
         """Delete a book from the reading list."""
         Book.delete_book(int(book_id))
         return f"Book ID {book_id} deleted."
+
+    def add_tag(book_id, tag):
+        """Add a tag to a book."""
+        return TagManager.add_tag(book_id, tag)
+
+    def list_tags(book_id):
+        """List all tags for a specific book."""
+        return TagManager.list_tags(book_id)
+
+    def delete_tag(book_id, tag):
+        """Delete a specific tag from a book."""
+        return TagManager.delete_tag(book_id, tag)
