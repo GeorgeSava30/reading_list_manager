@@ -1,5 +1,0 @@
-In cese .\venv\Scripts\activate doesn't work
-
-PS C:\Users\jerom\reading_list_manager> Set-ExecutionPolicy Unrestricted -Scope Process
->>
-PS C:\Users\jerom\reading_list_manager> .\venv\Scripts\activate
