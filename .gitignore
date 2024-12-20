@@ -8,3 +8,5 @@ filestructure.txt
 
 note.txt
 *.csv
+*.xlsx
+!/sample_reading_list.db

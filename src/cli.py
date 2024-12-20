@@ -12,6 +12,9 @@ class CLI:
             print("3. List All Books")
             print("4. Update Book Status")
             print("5. Delete a Book")
+            print("6. Add a Tag to a Book")
+            print("7. List Tags for a Book")
+            print("8. Delete a Tag from a Book")
             print("9. Generate Report")
             print("0. Exit")
 
@@ -34,6 +37,17 @@ class CLI:
             elif choice == "5":
                 book_id = input("Enter the ID of the book to delete: ")
                 print(BookManager.delete_book(book_id))
+            elif choice == "6":
+                book_id = input("Enter the ID of the book to add a tag to: ")
+                tag = input("Enter the tag: ")
+                print(BookManager.add_tag(book_id, tag))
+            elif choice == "7":
+                book_id = input("Enter the ID of the book to list tags for: ")
+                print(f"Tags: {BookManager.list_tags(book_id)}")
+            elif choice == "8":
+                book_id = input("Enter the ID of the book to remove a tag from: ")
+                tag = input("Enter the tag to remove: ")
+                print(BookManager.delete_tag(book_id, tag))
             elif choice == "9":
                 format = input("Enter the report format (csv or excel): ").strip().lower()
                 output_path = input("Enter the output file name (default: 'report'): ").strip() or "report"
