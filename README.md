@@ -28,7 +28,7 @@
 ## File Structure
 
 ```
-C:\USERS\JEROM\READING_LIST_MANAGER
+READING_LIST_MANAGER
 │   .gitignore            # Ignores sensitive files and compiled artifacts.
 │   app.py                # Entry point for the application CLI.
 │   README.md             # Project overview and instructions.
