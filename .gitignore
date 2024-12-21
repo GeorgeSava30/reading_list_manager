@@ -1,5 +1,6 @@
 *.db
 settings/settings.ini
+settings.py
 venv/
 
 __pycache__/
